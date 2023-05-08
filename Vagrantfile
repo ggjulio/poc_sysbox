@@ -12,6 +12,7 @@ Vagrant.configure("2") do |config|
     end
 
     config.vm.synced_folder ".", "/home/vagrant/poc_sysbox", type: "virtualbox"
+    config.vm.network "forwarded_port", guest: 8080, host: 8080 # Jenkins
     config.vm.provision "shell", name: "Setting up VM", privileged: false,  inline: <<-SHELL
         set -eux
             
@@ -66,9 +67,12 @@ Vagrant.configure("2") do |config|
         cat /etc/docker/daemon.json \
             | jq '."default-runtime"="sysbox-runc"' \
             | sudo tee /etc/docker/daemon.json
-
         sudo systemctl restart docker.service
-        
+
+        # TODO: Setup jenkins to test jenkins+sysbox (with an agent node)
+        # docker run -p 8080:8080 -p 50000:50000 --restart=on-failure jenkins/jenkins:lts-jdk11 # https://github.com/jenkinsci/docker/blob/master/README.md
+        docker run --rm -d --runtime=sysbox-runc -p 8080:8080 -p 50000:50000 --restart=on-failure -P nestybox/jenkins-syscont
+
         echo done
     SHELL
 
