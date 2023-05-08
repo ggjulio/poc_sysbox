@@ -7,7 +7,8 @@ start_dockerd(){
     sleep 4
 }
 
-#
+# Remove .pid files, otherwise it prevents dockerd from
+# launching properly inside the container.
 stop_dockerd(){
     kill "$(cat /var/run/docker.pid)" \
         "$(cat /run/docker/containerd/containerd.pid)"
