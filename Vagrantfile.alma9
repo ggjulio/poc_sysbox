@@ -1,5 +1,9 @@
+SYSBOX_VERSION='0.6.1'
+
+
 Vagrant.configure("2") do |config|
     config.vm.box = "almalinux/9"
+    config.vagrant.plugins = "vagrant-reload"
 
     config.vm.provider "virtualbox" do |vb|    
         vb.cpus = 4
@@ -27,8 +31,12 @@ Vagrant.configure("2") do |config|
         # docker ps 
         
     SHELL
-        
-    config.vm.provision "shell", name: "Install sysbox", privileged: false,  inline: <<-SHELL
+
+    config.vm.provision :reload # reboot for kernel version upgrade
+
+    config.vm.provision "shell", name: "Install sysbox", privileged: false,
+        env: { "SYSBOX_VERSION" => SYSBOX_VERSION },
+        inline: <<-SHELL
         set -eux
         
         # Install sysbox && configure docker+sysbox

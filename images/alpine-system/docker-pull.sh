@@ -4,7 +4,7 @@ set -eux
 
 start_dockerd(){
     dockerd > /var/log/dockerd.log 2>&1 &
-    sleep 2
+    sleep 4
 }
 
 #
