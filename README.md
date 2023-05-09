@@ -25,7 +25,7 @@ docker run --runtime=sysbox-runc -it alpine-syscontainer
 - [x] https://blog.nestybox.com/2019/09/29/jenkins.html
 
 #### TODO
-- [ ] check alternatives to sysbox :https://blog.nestybox.com/2020/10/06/related-tech-comparison.html
+- [ ] check **all** alternatives to sysbox :https://blog.nestybox.com/2020/10/06/related-tech-comparison.html
 - [ ] Check how jenkins could fail on uid:gid change from the syscontainer (the workspace directory)
 - [ ] check how to setup a rootless docker with sysbox: https://rootlesscontaine.rs/
 
