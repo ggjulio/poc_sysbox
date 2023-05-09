@@ -22,10 +22,12 @@ docker run --runtime=sysbox-runc -it alpine-syscontainer
 - [x] https://blog.nestybox.com/2020/09/23/perf-comparison.html
 - [ ] https://blog.nestybox.com/2019/11/11/docker-sandbox.html
 - [x] https://blog.nestybox.com/2019/11/11/build-inner-img.html
-- [ ] https://blog.nestybox.com/2019/09/29/jenkins.html
+- [x] https://blog.nestybox.com/2019/09/29/jenkins.html
 
-#### TODO check alternatives to sysbox
-- [ ] https://blog.nestybox.com/2020/10/06/related-tech-comparison.html
+#### TODO
+- [ ] check alternatives to sysbox :https://blog.nestybox.com/2020/10/06/related-tech-comparison.html
+- [ ] Check how jenkins could fail on uid:gid change from the syscontainer (the workspace directory)
+- [ ] check how to setup a rootless docker with sysbox: https://rootlesscontaine.rs/
 
 #### Troubleshoot
 - https://stackoverflow.com/questions/73525175/running-docker-in-sysbox-runtime-connected-to-the-specifc-network
