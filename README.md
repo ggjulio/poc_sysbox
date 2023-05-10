@@ -28,9 +28,11 @@ docker run --runtime=sysbox-runc -it alpine-syscontainer
 - [ ] check **all** alternatives to sysbox :https://blog.nestybox.com/2020/10/06/related-tech-comparison.html
 - [ ] Check how jenkins could fail on uid:gid change from the syscontainer (the workspace directory)
 - [ ] check how to setup a rootless docker with sysbox: https://rootlesscontaine.rs/
+- [ ] Jenkinsfile - check how to prevent users from mounting the docker unix socket into their container
+  - Docker rootless enough ?
+  - https://docs.datadoghq.com/security/default_rules/cis-docker-1.2.0-5.31/
+  - https://hub.datree.io/built-in-rules/prevent-mounting-docker-socket
 
-#### Troubleshoot
-- https://stackoverflow.com/questions/73525175/running-docker-in-sysbox-runtime-connected-to-the-specifc-network
 #### Useful Ressources:
 - https://github.com/nestybox/sysbox
 - https://github.com/nestybox/sysbox-ee
@@ -40,7 +42,6 @@ docker run --runtime=sysbox-runc -it alpine-syscontainer
 - https://www.nestybox.com/sysbox
 - https://blog.nestybox.com/2020/10/06/related-tech-comparison.html
 - https://blog.nestybox.com/2020/10/21/gitlab-dind.html
-
 
 #### Random things
 
