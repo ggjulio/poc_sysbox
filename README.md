@@ -30,8 +30,10 @@ docker run --runtime=sysbox-runc -it alpine-syscontainer
 - [ ] check how to setup a rootless docker with sysbox: https://rootlesscontaine.rs/
 - [ ] Jenkinsfile - check how to prevent users from mounting the docker unix socket into their container
   - Docker rootless enough ?
+  - chmod permission ?
   - https://docs.datadoghq.com/security/default_rules/cis-docker-1.2.0-5.31/
   - https://hub.datree.io/built-in-rules/prevent-mounting-docker-socket
+  - https://docs.bridgecrew.io/docs/bc_k8s_26
 
 #### Useful Ressources:
 - https://github.com/nestybox/sysbox
