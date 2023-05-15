@@ -55,7 +55,6 @@ Vagrant.configure("2") do |config|
                 --force-restart \
                 --verbose
                 # userns-remap mode ?
-                # TODO rootless
             sudo systemctl restart docker
             sudo /usr/bin/sysbox # TODO unecessary ? also, systemd enable ?
         )
