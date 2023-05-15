@@ -27,7 +27,8 @@ docker run --runtime=sysbox-runc -it alpine-syscontainer
 #### TODO
 - [ ] check **all** alternatives to sysbox :https://blog.nestybox.com/2020/10/06/related-tech-comparison.html
 - [ ] Check how jenkins could fail on uid:gid change from the syscontainer (the workspace directory)
-- [ ] check how to setup a rootless docker with sysbox: https://rootlesscontaine.rs/
+- [x] check how to setup a rootless docker with sysbox
+  - sysbox runtine need root like regular runc...so no rootless, however containers are run without any privileges
 - [ ] Jenkinsfile - check how to prevent users from mounting the docker unix socket into their container
   - Docker rootless enough ?
   - chmod permission ?
