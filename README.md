@@ -51,6 +51,9 @@ docker run --runtime=sysbox-runc -it alpine-syscontainer
 echo 1 > /proc/sys/kernel/sysrq && echo b > /proc/sysrq-trigger # this reboot the host if the container is privileged... too bad !
 ```
 
+#### Write-ups
+- https://aircall.io/blog/tech-team-stories/how-aircall-implemented-sysbox-to-enhance-security/
+
 #### off topics
 ##### Jenkins concurrent build
 - https://stackoverflow.com/questions/61866110/jenkins-concurrent-builds-on-docker-slaves
